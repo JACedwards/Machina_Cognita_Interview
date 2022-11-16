@@ -4,14 +4,14 @@
 def masterDictionary():
     '''Lists of vocab from bodies by part of speech'''
 
-    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drones','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', ]
-    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', ]
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drones','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where']
+    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate']
     introg = ['who', 'when', 'how', 'how much', 'how many', 'what', 'why', 'whose', 'which']
     cond = ['would','could', 'should', 'can', 'may', 'might']
-    pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're", ]
-    adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this', ]
-    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon',  ]
-    prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for', ]
+    pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're"]
+    adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this']
+    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon']
+    prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for']
     conj = ['and']
     art = ['the']
     let_num = ['S3/4', 'CP3','Cp9', 'CP8', 'ugv1', '75m', 'cp17', 'ugv2', 'cp30'] #temp workaround for .lower() issue below; edge '75m' not noun
@@ -34,6 +34,7 @@ def masterDictionary():
     master_d = noun_d | verb_d | introg_d | cond_d | pron_d | adj_d | adv_d | prep_d | conj_d | art_d | let_num_d
 
     return master_d
+
 
 def letNumCombos():
     '''Temporary workaround for problems caused by letter/number combos'''

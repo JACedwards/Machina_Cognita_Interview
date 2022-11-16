@@ -55,7 +55,7 @@ def parse(s):
 
     return f'\nCategory = Observation'
 
-print(parse('Retain CP8'))
+print(parse('We are sending boats back'))
 
 
 
