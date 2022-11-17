@@ -6,7 +6,7 @@ id_body = [['d03f7fc5-46bf-4edc-a0c3-4ea0222c696a', 'ugv1 holding 75m east of cp
 ['f1e762bd-236f-47be-9c06-46a6bb489c96', 'Retain CP8'],
 ['3b57f661-0452-4545-856f-978f4383df26', 'Withdraw to squad 4'],
 ['3afdc017-b1de-4042-9078-b01b9f2ed46a', 'We are sending boats back'],
-['d45f679d-70a4-426a-a704-532944c90382', 'That also in a weird grid, are you getting a valid reading?'],
+['d45f679d-70a4-426a-a704-532944c90382', 'That also in a weird grid,  are you getting a valid reading?'],
 ['2d344ba2-4bf1-4694-81ae-effcb15ca67b', 'uav scouting in front of squad 4'],
 ['3e7d58bb-fca3-4083-b098-a5bcf6144ceb', 'Squad three is halfway between checkpoint 18 And check .9 pushing South'],
 ['3fc4fae8-af37-4221-84ee-54ccc36bdf90', 'Drones on their way'],
@@ -20,14 +20,14 @@ id_body = [['d03f7fc5-46bf-4edc-a0c3-4ea0222c696a', 'ugv1 holding 75m east of cp
 ['080a5089-f1be-4fbe-a19b-50f77ec137e1', 'Squad three taking heavy contacts in multiple directions need reinforcements ASAP']]
 
 def parse(s):
+    print(f"Input text: \n\t{s[1]}")
     master_d = masterDictionary()
     let_num = letNumCombos()
-    id_body = bodiesNIDs()
-
     id_t = s[0]
     mult_sent = []
     ind_sent = []
     lst_sent = []
+
 
     #Check for multiple sentences, divided by comma
 
@@ -41,24 +41,23 @@ def parse(s):
         ind_sent= s[1][i+2:]
         lst_sent.append(ind_sent) 
         mult_sent.append(lst_sent)
-        print(mult_sent)
 
 
     #Check for multiple sentences, divided by period, ignoring period at end.
-    elif '.' == s[1][-1]:
-        s[1] = s[1][:-1]
-        print(s[1])
-        if '.' in s[1]:
-            i = s[1].index('.')
-            ind_sent= s[1][:-i]
-            lst_sent.append(ind_sent) 
-            mult_sent.append(lst_sent)
+    elif '.' in s[1]:
 
-            lst_sent = []
-            ind_sent= s[1][i+2:]
-            lst_sent.append(ind_sent) 
-            mult_sent.append(lst_sent)
-            print(mult_sent)
+        if '.' == s[1][-1]:
+            s[1] = s[1][:-1]
+        
+        i = s[1].index('.')
+        ind_sent= s[1][:-i]
+        lst_sent.append(ind_sent) 
+        mult_sent.append(lst_sent)
+
+        lst_sent = []
+        ind_sent= s[1][i+2:]
+        lst_sent.append(ind_sent) 
+        mult_sent.append(lst_sent)
 
     else:
         ind_sent.append(s[1])
@@ -69,42 +68,31 @@ def parse(s):
     sent_d = {}
     output = []
     for i in range(len(mult_sent)): 
-        if '?' in mult_sent[i][0]:
+        w = mult_sent[i][0].split()
+        for x in w:
+            if x in let_num:
+                sent_d[x] = master_d.get(x)  #deals with letter-number anomoly
+            else: 
+                sent_d[x] = master_d.get(x.lower())
+        p_o_s = list(sent_d.values())
+
+        # Conditional check:
+        if p_o_s[0] == 'conditional':
             output.append(mult_sent[i][0])
-            output.append("Category = Question")
+            output.append("Question")
 
+        ####hard coding for example that ends in an observation
         else:
-            w = mult_sent[i][0].split()
-            for x in w:
-                if x in let_num:
-                    sent_d[x] = master_d.get(x)  #deals with letter-number anomoly
-                else: 
-                    sent_d[x] = master_d.get(x.lower())
-            p_o_s = list(sent_d.values())
-            print(f"this is list version of diagram: \n{p_o_s}")
-            print(f"This is dictionary diagram: \n{sent_d}")
-
-
-            # output.append({id_t})
-            # Conditional check:
-            if p_o_s[0] == 'conditional':
-                output.append(mult_sent[i][0])
-                output.append("Category = Question")
-                print(f"output after first run:  {output}")
-
-
-
-##########<>start here with refactoring master (or basicanalyzer) to fit this version##
-            # else:
-            #     output.append(mult_sent[i][0])
-            #     output.append("Category = Observation")
-            # sent_d = {}
-            # p_o_s = []
+            output.append(mult_sent[i][0])
+            output.append("Observation")
+        sent_d = {}
+        p_o_s = []
 
     output.insert(0, id_t)
-    return output
+    return f"\nText ID: \n\t{output[0]}\n\nFirst sentence:\n\t{output[1]}\n\nCategory:\n\t{output[2]}\n\nSecond sentence: \n\t{output[3]}\n\nCategory:\n\t{output[4]}"
 
-print(parse(id_body[6]))
+print(parse(id_body[9]))
+# print(parse(['c5207108-898b-4303-8b40-f131dcde07d4', "Please pass the UAS 4 line as soon as you're able to for this run. It will help us get to where we're needed to adjudicate."]))
 
 
 
