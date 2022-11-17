@@ -1,10 +1,12 @@
-from Preprocessing import masterDictionary, letNumCombos, bodiesNIDs
+from Preprocessing import masterDictionary, letNumCombos, bodiesNIDs, noun, verb
 
 id_body = bodiesNIDs()
 
 def parse(s):
     master_d = masterDictionary()
     let_num = letNumCombos()
+    noun_lst = noun()
+    verb_lst = verb()
 
 
     # Question mark check:
@@ -15,9 +17,9 @@ def parse(s):
     p_o_s = []
     sent_d = {}
     s_lst = s.split()
-    print(f"List version of input: \n{s_lst}")
+    print(f"this is list version of input: \n{s_lst}")
 
-     
+   
     for w in s_lst:
         if w in let_num:
             sent_d[w] = master_d.get(w)  #deals with letter-number hybrid (3dc)
@@ -25,14 +27,22 @@ def parse(s):
             sent_d[w] = master_d.get(w.lower())
     p_o_s = list(sent_d.values())
 
+    # print(f'Input text: \n"{s}"')
     print(f"\nList diagram:  \n{p_o_s}")
     print(f"\nDictionary diagram:  \n{sent_d}")
-  
 
-    
-    
-    # sent_d = {'Have': 'verb', 'you': 'pronoun', 'observed': 'verb', 'firing': 'noun'}
-    # p_o_s = ['verb', 'pronoun', 'verb', 'noun']
+    #<Check if ANY words are both nouns and verbs. problem is that dictionary is already formed here.
+    for i in range(len(s_lst)):
+        if s_lst[i].lower() in noun_lst and s_lst[i].lower() in verb_lst:
+            if i == 0:
+                p_o_s[0] = 'verb'
+            else:
+                p_o_s[i] = 'noun'
+                sent_d[s_lst[i]] = 'noun'
+                print({f"Index {i} should be 'noun'"})
+                print(f"This is refactored p_o_s:  \n{p_o_s}")
+                print(f"This is refactored dictionary where 'request' should = 'noun': \n{sent_d}")
+
 
     #Check part of speech for FIRST WORD
 
@@ -58,7 +68,16 @@ def parse(s):
 
     return f'\nCategory = Observation'
 
-print(parse(id_body[16][1]))
+print(parse('Request for cougar to fly'))
+#'Can you make a request tomorrow'
+#'Request for cougar to fly'
+
+
+
+
+
+
+
 
 
 

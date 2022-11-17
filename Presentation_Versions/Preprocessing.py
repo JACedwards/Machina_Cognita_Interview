@@ -4,16 +4,16 @@
 def masterDictionary():
     '''Lists of vocab from bodies by part of speech'''
 
-    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drones','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where']
-    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate']
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar']
+    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
     introg = ['who', 'when', 'how', 'how much', 'how many', 'what', 'why', 'whose', 'which']
     cond = ['would','could', 'should', 'can', 'may', 'might']
     pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're"]
     adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this']
-    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon']
+    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon', 'tomorrow']
     prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for']
     conj = ['and']
-    art = ['the']
+    art = ['the', 'a']
     let_num = ['S3/4', 'CP3','Cp9', 'CP8', 'ugv1', '75m', 'cp17', 'ugv2', 'cp30'] #temp workaround for .lower() issue below; edge '75m' not noun
 
     #creating individual dionaries for each part of sheep:  key = word : value = part of speech
@@ -52,7 +52,6 @@ def bodiesNIDs():
 ['d45f679d-70a4-426a-a704-532944c90382', 'That also in a weird grid,  are you getting a valid reading?'],
 ['2d344ba2-4bf1-4694-81ae-effcb15ca67b', 'uav scouting in front of squad 4'],
 ['3e7d58bb-fca3-4083-b098-a5bcf6144ceb', 'Squad three is halfway between checkpoint 18 And check .9 pushing South'],
-['3fc4fae8-af37-4221-84ee-54ccc36bdf90', 'Drones on their way'],
 ['1b64f8e9-af36-4cbf-90fe-75bc22a54f38', '"ugv2 now pushing south to cp30, then west to cp17: no weapon active.'],
 ['20014dd7-29b7-4d12-b498-323795abc043', 'Squad 3 is Conducting accountability and will return to start location'],
 ['c5207108-898b-4303-8b40-f131dcde07d4', "Please pass the UAS 4 line as soon as you're able to for this run. It will help us get to where we're needed to adjudicate"],
@@ -60,5 +59,20 @@ def bodiesNIDs():
 ['88201f43-a1e0-49f4-81cd-fbb59f4b601a', 'can you confirm uav mission'],
 ['c55c1396-85f8-4385-94dc-822ffd6821e2', 'Squad 4 update?'],
 ['32ed2883-038b-4682-ad57-ad4fc5ad910e', 'Have you observed firing'],
-['080a5089-f1be-4fbe-a19b-50f77ec137e1', 'Squad three taking heavy contacts in multiple directions need reinforcements ASAP']]
+['080a5089-f1be-4fbe-a19b-50f77ec137e1', 'Squad three taking heavy contacts in multiple directions need reinforcements ASAP'],
+['063ea395-2811-41d3-ae2e-668c10fa0590', 'Request for cougar to fly'
+],
+['093ea395-2811-41d3-ae2e-668c10fa0590', 'Can you make a request tomorrow'
+]]
+#last one of the above is made up
     return id_body
+
+def noun():
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request']
+
+    return noun
+
+def verb():
+    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone']
+
+    return verb
