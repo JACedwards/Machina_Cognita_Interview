@@ -11,7 +11,6 @@ def parse(s):
     if '?' in s:
         return 'Question'
 
-    #String to list
     p_o_s = []
     sent_d = {}
     s_lst = s.split()
@@ -36,6 +35,7 @@ def parse(s):
     # Other verb = 1st
 
     # Rules out present or past participles (regular verbs).
+    #   If length <= 2
     #   If verb followed by noun or pronoun -> Question
     #   Else -> Command
     if p_o_s[0] == 'verb' and s_lst[0][-2:] != 'ed' and s_lst[0][-3:] != 'ing' and s_lst[0][-1:] != 's':

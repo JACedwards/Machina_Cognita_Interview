@@ -9,13 +9,13 @@ def parse(s):
 
     # Question mark check:
     if '?' in s:
-        return  f'\nInput Text: \n\t{s} \nCategory:\n\t Question (? mark)'
+        return  f'\nInput Text: \n\t{s} \n\nCategory:\n\t Question (? mark)\n\n-------------'
 
     #String to list
     p_o_s = []
     sent_d = {}
     s_lst = s.split()
-    print(f"List version of input: \n\t{s_lst}")
+    print(f"\nList version of input: \n\t{s_lst}")
 
      
     # Create list and dictionary diagrams
@@ -26,7 +26,6 @@ def parse(s):
             sent_d[w] = master_d.get(w.lower())
     p_o_s = list(sent_d.values())
     print(f"\nList diagram: \n\t{p_o_s}")
-    print(f"\nDictionary diagram: \n\t{sent_d}")
 
     # Conditional check:
     if p_o_s[0] == 'conditional':
@@ -54,10 +53,11 @@ def parse(s):
 
 print(parse(id_body[13][1]))
 print(parse(id_body[12][1]))
-print(parse(id_body[17][1]))
+print(parse(id_body[19][1]))
 print(parse(id_body[2][1]))
 print(parse(id_body[14][1]))
 print(parse(id_body[1][1]))
+print(parse(id_body[18][1]))
 
 
 
