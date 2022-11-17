@@ -1,49 +1,8 @@
 #  Lists of entries:  id + body
 
-
-def masterDictionary():
-    '''Lists of vocab from bodies by part of speech'''
-
-    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat']
-    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
-    introg = ['who', 'when', 'how', 'how much', 'how many', 'what', 'why', 'whose', 'which']
-    cond = ['would','could', 'should', 'can', 'may', 'might']
-    pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're", 'i']
-    adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this']
-    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon', 'tomorrow']
-    prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for']
-    conj = ['and']
-    art = ['the', 'a']
-    let_num = ['S3/4', 'CP3','Cp9', 'CP8', 'ugv1', '75m', 'cp17', 'ugv2', 'cp30'] #temp workaround for .lower() issue below; edge '75m' not noun
-
-    #creating individual dionaries for each part of sheep:  key = word : value = part of speech
-
-    noun_d = {noun[i] : 'noun' for i in range(len(noun))}
-    verb_d = {verb[i] : 'verb' for i in range(len(verb))}
-    introg_d = {introg[i] : 'interogative' for i in range(len(introg))}
-    cond_d = {cond[i] : 'conditional' for i in range(len(cond))}
-    pron_d = {pron[i] : 'pronoun' for i in range(len(pron))}
-    adj_d = {adj[i] : 'adjective' for i in range(len(adj))}
-    adv_d = {adv[i] : 'adverb' for i in range(len(adv))}
-    prep_d = {prep[i] : 'preposition' for i in range(len(prep))}
-    conj_d = {conj[i] : 'conjunction' for i in range(len(conj))}
-    art_d = {art[i] : 'article' for i in range(len(art))}
-    let_num_d = {let_num[i] : 'noun' for i in range(len(let_num))}
-
-    #combinig all dictionaries from above
-    master_d = noun_d | verb_d | introg_d | cond_d | pron_d | adj_d | adv_d | prep_d | conj_d | art_d | let_num_d
-
-    return master_d
-
-
-def letNumCombos():
-    '''Temporary workaround for problems caused by letter/number combos'''
-    '''Might be able to solve with reg ex'''
-
-    let_num = ['S3/4', 'CP3', 'Cp9', 'CP8', 'ugv1', '75m', 'cp17', 'ugv2', 'cp30']
-    return let_num
-
 def bodiesNIDs():
+    '''Lists of chat ID + text bodies'''
+
     id_body = [['d03f7fc5-46bf-4edc-a0c3-4ea0222c696a', 'ugv1 holding 75m east of cp17, awaiting instructions'],
 ['1a276751-2053-49fa-a025-d11725a0006a', 'Push to 17 to link with S3/4'],
 ['f1e762bd-236f-47be-9c06-46a6bb489c96', 'Retain CP8'],
@@ -63,8 +22,46 @@ def bodiesNIDs():
 ['063ea395-2811-41d3-ae2e-668c10fa0590', 'Request for cougar to fly'],
 ['093ea395-2811-41d3-ae2e-668c10fa0590', 'Can you make a request tomorrow'],
 ['074ea395-2811-41d3-ae2e-668c10fa0590', 'Tomorrow I will request a boat']]
-#last two of the above are made up
+
     return id_body
+
+def masterDictionary():
+    '''Lists of vocab from bodies by part of speech'''
+    '''Dictionary:  key = vocab, value = part of speech'''
+
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat']
+    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
+    introg = ['who', 'when', 'how', 'how much', 'how many', 'what', 'why', 'whose', 'which']
+    cond = ['would','could', 'should', 'can', 'may', 'might']
+    pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're", 'i']
+    adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this']
+    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon', 'tomorrow']
+    prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for']
+    conj = ['and']
+    art = ['the', 'a']
+    let_num = ['S3/4', 'CP3','Cp9', 'CP8', 'ugv1', '75m', 'cp17', 'ugv2', 'cp30'] #temp workaround for .lower() issue below; edge '75m' not noun
+
+    #Individual dictionaries by part of speech
+
+    noun_d = {noun[i] : 'noun' for i in range(len(noun))}
+    verb_d = {verb[i] : 'verb' for i in range(len(verb))}
+    introg_d = {introg[i] : 'interogative' for i in range(len(introg))}
+    cond_d = {cond[i] : 'conditional' for i in range(len(cond))}
+    pron_d = {pron[i] : 'pronoun' for i in range(len(pron))}
+    adj_d = {adj[i] : 'adjective' for i in range(len(adj))}
+    adv_d = {adv[i] : 'adverb' for i in range(len(adv))}
+    prep_d = {prep[i] : 'preposition' for i in range(len(prep))}
+    conj_d = {conj[i] : 'conjunction' for i in range(len(conj))}
+    art_d = {art[i] : 'article' for i in range(len(art))}
+    let_num_d = {let_num[i] : 'noun' for i in range(len(let_num))}
+
+    #Master dictionary
+    master_d = noun_d | verb_d | introg_d | cond_d | pron_d | adj_d | adv_d | prep_d | conj_d | art_d | let_num_d
+
+    return master_d
+
+
+#Needed to access following lists individually in processing files
 
 def noun():
     noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat']
@@ -73,9 +70,15 @@ def noun():
 
 def verb():
     verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
-
     return verb
 
 def art():
     art = ['the', 'a']
     return art
+
+def letNumCombos():
+    '''Temporary workaround for problems caused by letter/number combos'''
+    #Might solve via reg ex
+
+    let_num = ['S3/4', 'CP3', 'Cp9', 'CP8', 'ugv1', '75m', 'cp17', 'ugv2', 'cp30']
+    return let_num
