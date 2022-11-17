@@ -89,10 +89,10 @@ def parse(s):
         p_o_s = []
 
     output.insert(0, id_t)
-    return f"\nText ID: \n\t{output[0]}\n\nFirst sentence:\n\t{output[1]}\n\nCategory:\n\t{output[2]}\n\nSecond sentence: \n\t{output[3]}\n\nCategory:\n\t{output[4]}"
+    return f"\nText ID: \n\t{output[0]}\n\nFirst sentence:\n\t{output[1]}\n\nCategory:\n\t{output[2]}\n\nSecond sentence: \n\t{output[3]}\n\nCategory:\n\t{output[4]}\n\n--------------"
 
 print(parse(id_body[9]))
-# print(parse(['c5207108-898b-4303-8b40-f131dcde07d4', "Please pass the UAS 4 line as soon as you're able to for this run. It will help us get to where we're needed to adjudicate."]))
+print(parse(['c5207108-898b-4303-8b40-f131dcde07d4', "Please pass the UAS 4 line as soon as you're able to for this run. It will help us get to where we're needed to adjudicate."]))
 
 
 
