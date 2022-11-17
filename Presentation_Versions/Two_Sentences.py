@@ -29,7 +29,7 @@ def parse(s):
     lst_sent = []
 
 
-    #Check for multiple sentences, divided by comma
+    ###Check for multiple sentences, divided by comma##
 
     if ',' in s[1]:
         i = s[1].index(',')
@@ -43,7 +43,7 @@ def parse(s):
         mult_sent.append(lst_sent)
 
 
-    #Check for multiple sentences, divided by period, ignoring period at end.
+    ###Check for multiple sentences, divided by period, ignoring period at end.###
     elif '.' in s[1]:
 
         if '.' == s[1][-1]:
@@ -63,6 +63,8 @@ def parse(s):
         ind_sent.append(s[1])
         mult_sent.append(ind_sent)
 
+    ###End multi-sentence check####
+
     
     p_o_s = []
     sent_d = {}
@@ -71,17 +73,16 @@ def parse(s):
         w = mult_sent[i][0].split()
         for x in w:
             if x in let_num:
-                sent_d[x] = master_d.get(x)  #deals with letter-number anomoly
+                sent_d[x] = master_d.get(x)  
             else: 
                 sent_d[x] = master_d.get(x.lower())
         p_o_s = list(sent_d.values())
 
-        # Conditional check:
+
         if p_o_s[0] == 'conditional':
             output.append(mult_sent[i][0])
             output.append("Question")
 
-        ####hard coding for example that ends in an observation
         else:
             output.append(mult_sent[i][0])
             output.append("Observation")
