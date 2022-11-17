@@ -4,11 +4,11 @@
 def masterDictionary():
     '''Lists of vocab from bodies by part of speech'''
 
-    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar']
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat']
     verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
     introg = ['who', 'when', 'how', 'how much', 'how many', 'what', 'why', 'whose', 'which']
     cond = ['would','could', 'should', 'can', 'may', 'might']
-    pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're"]
+    pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're", 'i']
     adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this']
     adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon', 'tomorrow']
     prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for']
@@ -60,19 +60,22 @@ def bodiesNIDs():
 ['c55c1396-85f8-4385-94dc-822ffd6821e2', 'Squad 4 update?'],
 ['32ed2883-038b-4682-ad57-ad4fc5ad910e', 'Have you observed firing'],
 ['080a5089-f1be-4fbe-a19b-50f77ec137e1', 'Squad three taking heavy contacts in multiple directions need reinforcements ASAP'],
-['063ea395-2811-41d3-ae2e-668c10fa0590', 'Request for cougar to fly'
-],
-['093ea395-2811-41d3-ae2e-668c10fa0590', 'Can you make a request tomorrow'
-]]
-#last one of the above is made up
+['063ea395-2811-41d3-ae2e-668c10fa0590', 'Request for cougar to fly'],
+['093ea395-2811-41d3-ae2e-668c10fa0590', 'Can you make a request tomorrow'],
+['074ea395-2811-41d3-ae2e-668c10fa0590', 'Tomorrow I will request a boat']]
+#last two of the above are made up
     return id_body
 
 def noun():
-    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request']
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat']
 
     return noun
 
 def verb():
-    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone']
+    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
 
     return verb
+
+def art():
+    art = ['the', 'a']
+    return art
