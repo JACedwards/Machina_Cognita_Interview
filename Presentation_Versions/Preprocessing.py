@@ -21,7 +21,8 @@ def bodiesNIDs():
 ['080a5089-f1be-4fbe-a19b-50f77ec137e1', 'Squad three taking heavy contacts in multiple directions need reinforcements ASAP'],
 ['063ea395-2811-41d3-ae2e-668c10fa0590', 'Request for cougar to fly'],
 ['093ea395-2811-41d3-ae2e-668c10fa0590', 'Can you make a request tomorrow'],
-['074ea395-2811-41d3-ae2e-668c10fa0590', 'Tomorrow I will request a boat']]
+['074ea395-2811-41d3-ae2e-668c10fa0590', 'Tomorrow I will request a boat'],
+['f52e9493-becc-4b64-a2c5-ebe4e67e8fbc', "Why aren't we game on yet"]]
 
     return id_body
 
@@ -29,13 +30,13 @@ def masterDictionary():
     '''Lists of vocab from bodies by part of speech'''
     '''Dictionary:  key = vocab, value = part of speech'''
 
-    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat']
-    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make']
+    noun = ['firing', 'uav', 'mission', 'uavs', 'squad', 'three', 'contacts', 'drone','directions', 'reinforcements', 'accountability', 'location', 'boats', 'halfway', 'checkpoint', 'check', 'south',  'way', '17', 'instructions', 'weapon', 'uas', 'line', 'run', 'where', 'cougar', 'request', 'boat', 'game']
+    verb = ['have', 'observed', 'confirm', 'are', 'taking', 'need', 'is', 'conducting', 'will', 'return', 'scouting', 'are', 'sending', 'pushing', 'push', 'link', 'withdraw', 'retain', 'holding', 'awaiting', 'active', 'please', 'pass', 'able', 'will', 'help', 'get', 'needed', 'adjudicate', 'request', 'drone', 'fly', 'make', "aren't"]
     introg = ['who', 'when', 'how', 'how much', 'how many', 'what', 'why', 'whose', 'which']
     cond = ['would','could', 'should', 'can', 'may', 'might']
     pron = ['you', 'we', 'their', "you're", 'it', 'us', "we're", 'i']
     adj = ['uav', 'three', 'heavy', 'multiple', '3', 'enroute', 'still','front','start','18', '.9', 'no', 'this']
-    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon', 'tomorrow']
+    adv = ['asap','back', 'east', 'now', 'south', 'then', 'west', 'soon', 'tomorrow', 'yet']
     prep = ['in', 'to', 'between', 'on', 'with', 'of', 'as', 'for']
     conj = ['and']
     art = ['the', 'a']
