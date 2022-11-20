@@ -1,4 +1,4 @@
-#  Lists of entries:  id + body
+
 
 def bodiesNIDs():
     '''Lists of chat ID + text bodies'''
